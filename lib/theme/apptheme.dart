@@ -5,8 +5,22 @@ class AppTheme {
   static Color white = Color(0xffF2FEFF);
   static Color red = Color(0xffFF5659);
   static Color black = Color(0xff1C1C1C);
+  static Color gray = Color(0xff7B7B7B);
 
   static ThemeData lighttheme = ThemeData(
+    scaffoldBackgroundColor: white,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      elevation: 0,
+      backgroundColor: primary,
+      foregroundColor: white,
+      shape: CircleBorder(side: BorderSide(width: 5, color: white)),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: primary,
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: white,
+      unselectedItemColor: white,
+    ),
     textTheme: TextTheme(
       headlineLarge: TextStyle(
         color: black,
@@ -16,7 +30,7 @@ class AppTheme {
       headlineSmall: TextStyle(
         color: black,
         fontSize: 24,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w700,
       ),
       titleLarge: TextStyle(
         color: black,
@@ -27,6 +41,7 @@ class AppTheme {
         color: black,
         fontSize: 18,
         fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
       ),
       titleSmall: TextStyle(
         color: black,
@@ -36,6 +51,30 @@ class AppTheme {
       bodyLarge: TextStyle(
         color: black,
         fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyMedium: TextStyle(
+        color: black,
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+        decoration: TextDecoration.underline,
+        decorationColor: AppTheme.primary,
+        decorationThickness: 1.5,
+      ),
+      bodySmall: TextStyle(
+        color: black,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+      ),
+      labelLarge: TextStyle(
+        color: black,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
+      labelMedium: TextStyle(
+        color: black,
+        fontSize: 14,
         fontWeight: FontWeight.bold,
       ),
     ),

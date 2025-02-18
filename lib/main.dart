@@ -1,5 +1,8 @@
+import 'package:evently/authentication/forgetpassword.dart';
+import 'package:evently/authentication/login.dart';
+import 'package:evently/authentication/rigesterscreen.dart';
 import 'package:evently/screens/getready.dart';
-import 'package:evently/screens/login.dart';
+import 'package:evently/screens/homescreen.dart';
 import 'package:evently/screens/onBoarding.dart';
 import 'package:evently/services/shared_keys.dart';
 import 'package:evently/theme/apptheme.dart';
@@ -22,14 +25,25 @@ class Evently extends StatelessWidget {
           LocalStorageKeys.runforthefirsttime,
         ) ??
         false;
+    bool loginpagekey = LocalStorageServices.getbool(
+          LocalStorageKeys.loginpagekey,
+        ) ??
+        false;
     return MaterialApp(
-      home: runforthefirsttime ? LoginScreen() : GetReadyScreen(),
+      home: runforthefirsttime
+          ? loginpagekey
+              ? HomeScreen()
+              : LoginScreen()
+          : GetReadyScreen(),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lighttheme,
       routes: {
         'getready': (context) => GetReadyScreen(),
         'onboarding': (context) => OnBoarding(),
         'login': (context) => LoginScreen(),
+        'register': (context) => RigesterScreen(),
+        'forget': (context) => ForgetPassword(),
+        'home': (context) => HomeScreen(),
       },
     );
   }

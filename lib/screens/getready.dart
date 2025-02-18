@@ -1,9 +1,7 @@
-import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:evently/theme/apptheme.dart';
+import 'package:evently/widgets/custombutton.dart';
 import 'package:evently/widgets/flutterSwitcher.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 
 class GetReadyScreen extends StatefulWidget {
   GetReadyScreen({super.key});
@@ -95,26 +93,11 @@ class _OnBoardingScreenState extends State<GetReadyScreen> {
                 ),
               ],
             ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed('onboarding');
-              },
-              child: Container(
-                height: screendim.height * 0.08,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: AppTheme.primary,
-                ),
-                child: Center(
-                  child: Text(
-                    'Let’s Start',
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: AppTheme.white,
-                        ),
-                  ),
-                ),
-              ),
+            CustomButton(
+              onpressed: () =>
+                  Navigator.of(context).pushReplacementNamed('onboarding'),
+              screendim: screendim,
+              text: 'Let\'s Start',
             )
           ],
         ),
