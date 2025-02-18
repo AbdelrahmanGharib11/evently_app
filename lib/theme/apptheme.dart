@@ -22,6 +22,11 @@ class AppTheme {
       unselectedItemColor: white,
     ),
     textTheme: TextTheme(
+      displaySmall: TextStyle(
+        color: white,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
       headlineLarge: TextStyle(
         color: black,
         fontSize: 36,
@@ -75,6 +80,11 @@ class AppTheme {
       labelMedium: TextStyle(
         color: black,
         fontSize: 14,
+        fontWeight: FontWeight.bold,
+      ),
+      labelSmall: TextStyle(
+        color: white,
+        fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
     ),
